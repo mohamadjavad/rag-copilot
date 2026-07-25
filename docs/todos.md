@@ -11,10 +11,10 @@ Based on `docs/architecture.md` 13-step sequence. Each phase depends on the prev
 
 ## Phase 1: Backend Foundation
 
-- [ ] Create `backend/app/` package: `main.py` (FastAPI app entrypoint), `config.py` (pydantic-settings)
-- [ ] Add SQLAlchemy models for all 6 tables: `profiles`, `chat_threads`, `chat_messages`, `message_citations`, `source_documents`, `document_chunks`
-- [ ] Set up Alembic (`alembic.ini`, `alembic/env.py`) wired to Supabase Postgres
-- [ ] Write and run first migration: enable `pgvector` extension, create all tables
+- [x] Create `backend/app/` package: `main.py` (FastAPI app entrypoint), `config.py` (pydantic-settings)
+- [x] Add SQLAlchemy models for all 6 tables: `profiles`, `chat_threads`, `chat_messages`, `message_citations`, `source_documents`, `document_chunks`
+- [x] Set up Alembic (`alembic.ini`, `alembic/env.py`) wired to Supabase Postgres
+- [x] Write and run first migration: enable `pgvector` extension, create all tables
 
 ## Phase 2: Auth
 
