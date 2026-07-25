@@ -10,7 +10,6 @@ from datetime import UTC, datetime
 from pathlib import Path
 from urllib import request
 
-
 # Params: edit these, then run `uv run data/download.py`
 USER_AGENT = "Document Copilot your.email@example.com"
 TICKERS = ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL"]
