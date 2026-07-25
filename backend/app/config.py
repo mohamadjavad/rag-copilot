@@ -1,8 +1,15 @@
+from pathlib import Path
+
+from pydantic import computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+_env_path = Path(__file__).resolve().parent.parent / ".env"
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=str(_env_path), env_file_encoding="utf-8", extra="ignore"
+    )
 
     # Supabase
     supabase_url: str
@@ -19,6 +26,15 @@ class Settings(BaseSettings):
 
     # Server
     allowed_origins: str = "http://localhost:5173"
+
+    @computed_field
+    @property
+    def cors_origins(self) -> list[str]:
+        return [
+            origin.strip()
+            for origin in self.allowed_origins.split(",")
+            if origin.strip()
+        ]
 
 
 settings = Settings()
