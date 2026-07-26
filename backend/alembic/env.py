@@ -1,8 +1,6 @@
 from logging.config import fileConfig
 
 from alembic import context
-from sqlalchemy import pool, engine_from_config
-
 from app.config import settings
 from app.database import Base
 
@@ -15,6 +13,7 @@ from app.database.models import (  # noqa: F401
     Profile,
     SourceDocument,
 )
+from sqlalchemy import engine_from_config, pool
 
 config = context.config
 db_url = settings.database_url

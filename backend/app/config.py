@@ -19,8 +19,9 @@ class Settings(BaseSettings):
     # Postgres (direct connection for Alembic / SQLAlchemy)
     database_url: str
 
-    # OpenAI
+    # OpenAI / Groq (OpenAI-compatible API)
     openai_api_key: str
+    openai_base_url: str = "https://api.groq.com/openai/v1"
     openai_embedding_model: str = "text-embedding-3-small"
     openai_embedding_dimensions: int = 1536
 

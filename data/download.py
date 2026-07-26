@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib import request
 
 # Params: edit these, then run `uv run data/download.py`
-USER_AGENT = "Document Copilot your.email@example.com"
+USER_AGENT = "Document Copilot (research@example.com)"
 TICKERS = ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL"]
 FILINGS_PER_COMPANY = 5
 OUTPUT_DIR = Path(__file__).resolve().parent / "downloads"
